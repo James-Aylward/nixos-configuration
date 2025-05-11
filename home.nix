@@ -6,6 +6,7 @@
 
   imports = [
 		./modules/version-control.nix
+		./modules/shell.nix
 	];
 
   # Let home manager install and manage itself
