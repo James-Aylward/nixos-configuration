@@ -13,6 +13,6 @@
 
 	home.shellAliases = {
 		lg = "lazygit";
-	}
+	};
 
 }
