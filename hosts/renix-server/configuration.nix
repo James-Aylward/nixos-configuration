@@ -38,12 +38,7 @@
     packages = with pkgs; [ ];
   };
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "jamesa" = import ./home.nix;
-    };
-  };
+  home-manager.users.jamesa = import ./home.nix;
 
   nixpkgs.config.allowUnfree = true;
 

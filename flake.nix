@@ -20,7 +20,7 @@
       # Special args will be accessible by all submodules
       # 'inherit' is a shorthand for 'inputs = inputs;'
       # aka passing it through with the same name
-      extraSpecialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs; };
       modules = [
         ./hosts/renix-server/configuration.nix
         home-manager.nixosModules.default
