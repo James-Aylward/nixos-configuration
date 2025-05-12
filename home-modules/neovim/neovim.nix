@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
 
     home.sessionVariables.EDITOR = "nvim";
-    home.file.".config/nvim".source = ./neovim-dotfiles;
+    home.file.".config/nvim".source = ./dotfiles;
 
     programs.neovim = {
       enable = true;
