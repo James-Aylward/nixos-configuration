@@ -16,13 +16,13 @@
     # This is what is used for building systems
 
     # Framework
-    nixosConfigurations.framework = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.renixsafe = nixpkgs.lib.nixosSystem {
       # Special args will be accessible by all submodules
       # 'inherit' is a shorthand for 'inputs = inputs;'
       # aka passing it through with the same name
       specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix
+        ./hosts/renix-server/configuration.nix
         home-manager.nixosModules.home-manager
         # This following attribute set could be a let in if used more
         {
