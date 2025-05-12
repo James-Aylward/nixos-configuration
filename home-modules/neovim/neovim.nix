@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
 
     home.sessionVariables.EDITOR = "nvim";
-    home.file.".config/nvim".source = ./dotfiles;
+    home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles;
 
     programs.neovim = {
       enable = true;
@@ -9,9 +9,13 @@
       vimAlias = true;
       vimdiffAlias = true;
 
+   plugins = [
+	pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+];
+
     # TODO would love to cleanup
     extraPackages = with pkgs; [
-      tree-sitter
+      #tree-sitter
       texlab
       rocmPackages.llvm.clang
       pyright
