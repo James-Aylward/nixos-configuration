@@ -5,9 +5,9 @@
   home.homeDirectory = "/home/jamesa";
 
   imports = [
-		./modules/version-control.nix
-		./modules/shell.nix
-		./modules/terminal.nix
+		../../home-modules/version-control.nix
+		../../home-modules/shell.nix
+		../../home-modules/terminal.nix
 	];
 
   # Let home manager install and manage itself

@@ -20,16 +20,16 @@
       # Special args will be accessible by all submodules
       # 'inherit' is a shorthand for 'inputs = inputs;'
       # aka passing it through with the same name
-      specialArgs = { inherit inputs; };
+      extraSpecialArgs = { inherit inputs; };
       modules = [
         ./hosts/renix-server/configuration.nix
-        home-manager.nixosModules.home-manager
+        home-manager.nixosModules.default
         # This following attribute set could be a let in if used more
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.jamesa = ./home.nix;
-        }
+        #{
+        #  home-manager.useGlobalPkgs = true;
+        #  home-manager.useUserPackages = true;
+        #  home-manager.users.jamesa = ./home.nix;
+        #}
       ];
     };
 
