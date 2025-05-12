@@ -1,17 +1,7 @@
-{ config, pkgs, ... }:
-let
-  nvimDots = {
-    url = "github:james-aylward/neovim-dotfiles";
-    flake = false;
-  };
-in
-{
+{ config, pkgs, ... }: {
 
-    environment.variables.EDITOR = "nvim";
-
-    home.file.".config/nvim".source = {
-      nvimDots
-    }
+    home.sessionVariables.EDITOR = "nvim";
+    home.file.".config/nvim".source = ./neovim-dotfiles;
 
     programs.neovim = {
       enable = true;
@@ -35,5 +25,5 @@ in
       rubber
     ];
 
-  }
+  };
 }
