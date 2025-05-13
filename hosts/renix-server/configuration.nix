@@ -3,9 +3,9 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../modules/cinnamon.nix
+    ../../modules/desktop-environment/dwm-with-blocks.nix
     ../../modules/common.nix
-    ../../modules/picom.nix
+    ../../modules/audio.nix
     ../../modules/wireguard.nix
     inputs.home-manager.nixosModules.default
   ];
