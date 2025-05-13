@@ -5,6 +5,8 @@
     ./hardware-configuration.nix
     ../../modules/cinnamon.nix
     ../../modules/common.nix
+    ../../modules/picom.nix
+    ../../modules/wireguard.nix
     inputs.home-manager.nixosModules.default
   ];
 

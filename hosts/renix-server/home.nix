@@ -7,11 +7,13 @@
   imports = [
     ../../home-modules/cli.nix
     ../../home-modules/desktop-utility.nix
+
     # office
     ../../home-modules/shell.nix
     ../../home-modules/terminal.nix
     ../../home-modules/version-control.nix
     ../../home-modules/neovim/neovim.nix
+    ../../home-modules/office.nix
   ];
 
   # Let home manager install and manage itself
