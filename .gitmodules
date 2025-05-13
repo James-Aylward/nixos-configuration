@@ -1,3 +1,9 @@
 [submodule "home-modules/neovim/dotfiles"]
 	path = home-modules/neovim/dotfiles
 	url = https://github.com/james-aylward/neovim-dotfiles
+[submodule "modules/desktop-environment/dwmblocks"]
+	path = modules/desktop-environment/dwmblocks
+	url = https://github.com/james-aylward/dwmblocks
+[submodule "modules/desktop-environment/dwm"]
+	path = modules/desktop-environment/dwm
+	url = https://github.com/james-aylward/dwm
