@@ -20,7 +20,7 @@ let
       microtype
       siunitx
       tcolorbox;
-  })
+  });
 in
 {
   home.packages = with pkgs; [
@@ -28,7 +28,7 @@ in
     libreoffice-fresh
     hunspell
     hunspellDicts.en-au-large
-  ]
+  ];
 
   # TODO colors
   programs.sioyek.enable = true;
