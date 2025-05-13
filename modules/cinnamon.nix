@@ -1,8 +1,6 @@
 { config, pkgs, ... }: {
 
-  imports = [
-    ./xkb.nix
-  ];
+  imports = [ ./xkb.nix ];
 
   services.xserver = {
     enable = true;

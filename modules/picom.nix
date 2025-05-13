@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-    services.picom = {
+  services.picom = {
     enable = true;
     fadeDelta = 5;
     fade = true;
@@ -21,8 +21,6 @@
       "100:class_g = 'qutebrowser'"
     ];
 
-    fadeExclude = [
-      "class_g = 'dmenu'"
-    ];
+    fadeExclude = [ "class_g = 'dmenu'" ];
   };
 }

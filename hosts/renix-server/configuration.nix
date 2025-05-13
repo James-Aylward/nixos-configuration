@@ -46,9 +46,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs;
-    [
-    ];
+  environment.systemPackages = with pkgs; [ ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.11"; # Did you read the comment?

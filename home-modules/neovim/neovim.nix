@@ -1,17 +1,15 @@
 { config, pkgs, ... }: {
 
-    home.sessionVariables.EDITOR = "nvim";
-    home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles;
+  home.sessionVariables.EDITOR = "nvim";
+  #home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles;
 
-    programs.neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-      vimdiffAlias = true;
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
 
-   plugins = [
-	pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-];
+    plugins = [ pkgs.vimPlugins.nvim-treesitter.withAllGrammars ];
 
     # TODO would love to cleanup
     extraPackages = with pkgs; [

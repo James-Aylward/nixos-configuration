@@ -14,6 +14,7 @@
     ../../home-modules/version-control.nix
     ../../home-modules/neovim/neovim.nix
     ../../home-modules/office.nix
+    ../../home-modules/browser.nix
   ];
 
   # Let home manager install and manage itself
