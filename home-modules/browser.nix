@@ -2,8 +2,10 @@
 
   programs.qutebrowser = {
     enable = true;
-    extraConfig =
-      "	c.hinst.chars = \"arstgmneio\"\n	c.colors.webpage.preferred_color_scheme = 'dark'\n";
+    extraConfig = ''
+c.hints.chars = "arstgmneio"
+c.colors.webpage.preferred_color_scheme = "dark"
+    '';
   };
 
 }
