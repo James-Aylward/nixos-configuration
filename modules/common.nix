@@ -1,10 +1,15 @@
 { config, pkgs, ... }: {
 
-  #programs.nix-ld.enable = true;
+  nixpkgs.config.allowUnfree = true;
+
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
+
+  environment.systemPackages = with pkgs; [ xclip ];
+
   stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  stylix.base16Scheme =
+    "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
   stylix.image = ../images/nix.png;
   stylix.polarity = "dark";
   stylix.fonts = {
