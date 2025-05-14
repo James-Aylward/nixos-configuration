@@ -5,12 +5,15 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
+  services.gnome.gnome-keyring.enable = true;
+
   environment.systemPackages = with pkgs; [ xclip ];
 
   stylix.enable = true;
   stylix.base16Scheme =
     "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
   stylix.image = ../images/nix.png;
+  stylix.targets.grub.useWallpaper = true;
   stylix.polarity = "dark";
   stylix.fonts = {
     serif = {
