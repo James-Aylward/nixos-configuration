@@ -8,13 +8,20 @@
     unzip
     usbutils
     nix-search-cli
+    btop
+    yazi
+    fzf
+    zoxide
+    lazygit
   ];
 
-  programs.vim.enable = true;
-  programs.yazi = { enable = true; };
-  programs.fzf = { enable = true; };
-  programs.zoxide = { enable = true; };
-  programs.lazygit.enable = true;
   home.shellAliases = { lg = "lazygit"; };
-  programs.btop = { enable = true; };
+
+  programs.fzf.tmux.enableShellIntegration = true;
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+    mouse = true;
+  };
+
 }
