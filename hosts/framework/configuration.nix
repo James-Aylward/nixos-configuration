@@ -6,19 +6,20 @@
     ../../modules/desktop-environment/dwm-with-blocks.nix
     #../../modules/desktop-environment/cinnamon.nix
     ../../modules/common.nix
+    ../../modules/virtualisation.nix
     ../../modules/audio.nix
     ../../modules/wireguard.nix
     inputs.home-manager.nixosModules.default
   ];
 
   boot.loader.grub = {
-	enable = true;
-	efiSupport = true;
-	device = "nodev";
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
   };
   boot.loader.efi = {
-  	canTouchEfiVariables = true;
-	efiSysMountPoint = "/boot/efi";
+    canTouchEfiVariables = true;
+    efiSysMountPoint = "/boot/efi";
   };
 
   networking.hostName = "renix-server"; # Define your hostname.
@@ -29,11 +30,8 @@
     QT_SCALE_FACTOR = "2";
     _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
   };
-  services.xserver.displayManager.importedVariables = [
-    "QT_AUTO_SCREEN_SCALE_FACTOR"
-    "QT_SCALE_FACTOR"
-    "_JAVA_OPTIONS"
-  ];
+  services.xserver.displayManager.importedVariables =
+    [ "QT_AUTO_SCREEN_SCALE_FACTOR" "QT_SCALE_FACTOR" "_JAVA_OPTIONS" ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -65,7 +63,6 @@
 
   environment.systemPackages = with pkgs; [ ];
 
-
   services.power-profiles-daemon.enable = false;
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {
@@ -85,7 +82,6 @@
   };
 
   services.hardware.bolt.enable = true;
-
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "24.11"; # Did you read the comment?

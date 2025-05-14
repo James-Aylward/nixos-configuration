@@ -20,7 +20,6 @@
 
   programs.zoxide.enable = true;
 
-
   programs.fzf.tmux.enableShellIntegration = true;
   programs.tmux = {
     enable = true;
