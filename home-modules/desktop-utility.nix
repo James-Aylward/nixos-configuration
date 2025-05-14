@@ -4,13 +4,14 @@
   services.flameshot = {
     enable = true;
     settings = {
-      #General = {
-      #  showStartupLaunchMessage = false;
+      General = {
+        showStartupLaunchMessage = false;
       #  uiColor = "#d79921";
       #  contrastUiColor = "#282828";
-      #};
+      };
     };
   };
+
 
   services.nextcloud-client = {
     enable = true;
