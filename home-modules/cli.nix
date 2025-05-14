@@ -9,18 +9,30 @@
     usbutils
     nix-search-cli
     btop
-    yazi
-    fzf
-    lazygit
     tldr
-    nixfmt
+    nixfmt-classic
   ];
 
+  programs.lazygit.enable = true;
   home.shellAliases = { lg = "lazygit"; };
 
-  programs.zoxide.enable = true;
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.fzf.tmux.enableShellIntegration = true;
+
   programs.tmux = {
     enable = true;
     clock24 = true;
