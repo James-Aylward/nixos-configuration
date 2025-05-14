@@ -1,6 +1,9 @@
 { config, pkgs, ... }: {
 
   # TODO colors
+  nixpkgs.overlays = [
+    (import ../overlays.nix)
+  ];
   services.flameshot = {
     enable = true;
     settings = {
