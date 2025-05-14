@@ -3,18 +3,28 @@
   home.packages = with pkgs; [ nitch ];
 
   home.shell.enableZshIntegration = true;
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
   programs.zsh = {
     enable = true;
+
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    sessionVariables = {
+    	IGNOREEOF = 3;
+    };
+
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "sudo" "copyfile" "fzf" "vi-mode" ];
+      plugins = [ "sudo" "copyfile" "vi-mode" ];
     };
 
     initContent = ''
+      setopt ignore_eof
       nitch
     '';
   };
