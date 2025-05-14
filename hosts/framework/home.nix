@@ -19,6 +19,7 @@
     ../../home-modules/media.nix
     ../../home-modules/notifications.nix
     ../../home-modules/browser.nix
+    ../../home-modules/picom.nix
   ];
 
   # Let home manager install and manage itself
