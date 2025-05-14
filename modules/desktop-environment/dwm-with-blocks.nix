@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  imports = [ ./xkb.nix ./picom.nix ];
+  imports = [ ./xkb.nix ];
 
   environment.systemPackages = with pkgs; [
     dmenu-rs
