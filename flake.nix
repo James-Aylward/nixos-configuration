@@ -16,6 +16,19 @@
     # Here we are concerned with nixosConfigurations
     # This is what is used for building systems
 
+    # framework
+    nixosConfigurations.framework = nixpkgs.lib.nixosSystem {
+      # Special args will be accessible by all submodules
+      # 'inherit' is a shorthand for 'inputs = inputs;'
+      # aka passing it through with the same name
+      specialArgs = { inherit inputs; };
+      modules = [
+        stylix.nixosModules.stylix
+        ./hosts/framework/configuration.nix
+        home-manager.nixosModules.default
+      ];
+    };
+
     # renixsafe
     nixosConfigurations.renixsafe = nixpkgs.lib.nixosSystem {
       # Special args will be accessible by all submodules
