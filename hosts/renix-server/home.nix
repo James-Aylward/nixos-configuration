@@ -4,6 +4,8 @@
   home.username = "jamesa";
   home.homeDirectory = "/home/jamesa";
 
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ../../home-modules/cli.nix
     ../../home-modules/desktop-utility.nix
@@ -14,6 +16,7 @@
     ../../home-modules/version-control.nix
     ../../home-modules/neovim/neovim.nix
     ../../home-modules/office.nix
+    ../../home-modules/media.nix
     ../../home-modules/browser.nix
   ];
 
