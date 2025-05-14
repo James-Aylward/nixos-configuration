@@ -1,6 +1,1 @@
-{ config, pkgs, ... }: {
-  programs.alacritty = {
-    enable = true;
-    settings.font.size = 12;
-  };
-}
+{ config, pkgs, ... }: { programs.alacritty = { enable = true; }; }
