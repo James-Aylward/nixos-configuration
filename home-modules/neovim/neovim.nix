@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
 
   home.sessionVariables.EDITOR = "nvim";
   #home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles;
@@ -9,9 +9,14 @@
     vimAlias = true;
     vimdiffAlias = true;
 
+    extraLuaConfig = lib.fileContents ./options.lua + "\n" + lib.fileContents ./keybinds.lua;
     plugins = with pkgs.vimPlugins; [
       # Utility
-      marks-nvim
+      {
+        plugin = marks-nvim;
+        type = "lua";
+	config = builtins.readFile ./marks-nvim.lua;
+      }
       {
         plugin = telescope-nvim;
         type = "lua";
@@ -20,7 +25,11 @@
       auto-pairs
 
       # LaTeX
-      knap
+      {
+        plugin = knap;
+        type = "lua";
+	config = builtins.readFile ./knap.lua;
+      }
       luasnip
 
       # Preeetty
@@ -62,6 +71,7 @@
       ripgrep
       rubber
     ];
+
 
   };
 }

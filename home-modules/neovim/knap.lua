@@ -18,7 +18,7 @@ kmap('n','<leader>kf', function() require("knap").forward_jump() end)
 
 local gknapsettings = {
 	texoutputext = "pdf",
-	textopdf = "pdflatex -halt-on-error -shell-escape -interaction=batchmode %docroot%"
+--	textopdf = "pdflatex -halt-on-error -shell-escape -interaction=batchmode %docroot%"
 
 }
 vim.g.knap_settings = gknapsettings
