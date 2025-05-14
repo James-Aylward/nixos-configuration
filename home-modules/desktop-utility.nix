@@ -1,13 +1,14 @@
 { config, pkgs, ... }: {
 
+  # TODO colors
   services.flameshot = {
     enable = true;
     settings = {
-      General = {
-        showStartupLaunchMessage = false;
-        uiColor = "#d79921";
-        contrastUiColor = "#282828";
-      };
+      #General = {
+      #  showStartupLaunchMessage = false;
+      #  uiColor = "#d79921";
+      #  contrastUiColor = "#282828";
+      #};
     };
   };
 
