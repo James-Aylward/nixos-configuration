@@ -3,10 +3,19 @@
   home.packages = with pkgs; [ nitch ];
 
   home.shell.enableZshIntegration = true;
+
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
   };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    silent = true;
+    nix-direnv.enable = true;
+  };
+
   programs.zsh = {
     enable = true;
 
