@@ -1,8 +1,3 @@
 { config, pkgs, ... }: {
-  home.packages = with pkgs; [
-    vlc
-    darktable
-    imagemagick
-    qimgv
-  ];
+  home.packages = with pkgs; [ vlc darktable imagemagick qimgv ];
 }

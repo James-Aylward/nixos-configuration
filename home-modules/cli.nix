@@ -1,7 +1,14 @@
 { config, pkgs, ... }: {
 
-  home.packages = with pkgs; [ tree unzip ncdu file ];
-
+  home.packages = with pkgs; [
+    tree
+    unzip
+    ncdu
+    file
+    unzip
+    usbutils
+    nix-search-cli
+  ];
 
   programs.vim.enable = true;
   programs.yazi = { enable = true; };
