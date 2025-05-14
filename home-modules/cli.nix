@@ -11,11 +11,15 @@
     btop
     yazi
     fzf
-    zoxide
     lazygit
+    tldr
+    nixfmt
   ];
 
   home.shellAliases = { lg = "lazygit"; };
+
+  programs.zoxide.enable = true;
+
 
   programs.fzf.tmux.enableShellIntegration = true;
   programs.tmux = {
