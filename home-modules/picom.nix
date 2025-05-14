@@ -20,7 +20,6 @@
       "100:class_g = 'dwm'"
       "100:class_g = 'qutebrowser'"
     ];
-
     fadeExclude = [ "class_g = 'dmenu'" ];
   };
 }
