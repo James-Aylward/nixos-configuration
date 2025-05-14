@@ -15,6 +15,7 @@
   stylix.image = ../images/nix.png;
   stylix.targets.grub.useWallpaper = true;
   stylix.polarity = "dark";
+  stylix.fonts.sizes = { terminal = 8; };
   stylix.fonts = {
     serif = {
       package = pkgs.nerd-fonts.jetbrains-mono;
