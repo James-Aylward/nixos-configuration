@@ -1,8 +1,15 @@
 { config, pkgs, ... }: {
-  imports = [
-    ./xkb.nix
-    ./picom.nix
+  imports = [ ./xkb.nix ./picom.nix ];
+
+  environment.systemPackages = with pkgs; [
+    dmenu-rs
+    playerctl
+    feh
+    brightnessctl
+    networkmanagerapplet
+    (import ./switch.nix { inherit pkgs; })
   ];
+
   services.xserver = {
     enable = true;
     windowManager.dwm = {
