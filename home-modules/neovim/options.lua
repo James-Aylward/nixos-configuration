@@ -9,7 +9,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.scrolloff = 10
-vim.opt.signcolumn = "yes"
+--vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "no"
 vim.opt.isfname:append("@-@")
 
 vim.opt.wrap = false
