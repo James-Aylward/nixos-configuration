@@ -10,6 +10,8 @@ in {
   home.packages = with pkgs; [
     tex
     libreoffice-fresh
+    obsidian
+    thunderbird
     hunspell
     hunspellDicts.en-au-large
   ];
