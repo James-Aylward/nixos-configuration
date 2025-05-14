@@ -8,6 +8,7 @@
     brightnessctl
     networkmanagerapplet
     (import ./switch.nix { inherit pkgs; })
+    (pkgs.dwmblocks.overrideAttrs { src = ./dwmblocks; })
   ];
 
   services.xserver = {
