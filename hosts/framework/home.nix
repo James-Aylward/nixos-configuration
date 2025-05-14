@@ -17,6 +17,7 @@
     ../../home-modules/neovim/neovim.nix
     ../../home-modules/office.nix
     ../../home-modules/media.nix
+    ../../home-modules/notifications.nix
     ../../home-modules/browser.nix
   ];
 
