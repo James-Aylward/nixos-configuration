@@ -17,6 +17,9 @@
   programs.lazygit.enable = true;
   home.shellAliases = { lg = "lazygit"; };
 
+  # TODO remove
+  home.shellAliases = { m = "bear -- make"; };
+
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
@@ -48,6 +51,7 @@
         extraConfig = ''
           set -g @continuum-restore 'on'
           set -g @continuum-save-interval '1' # minutes
+          set -g @resurrect-strategy-nvim 'session'
         '';
       }
 
