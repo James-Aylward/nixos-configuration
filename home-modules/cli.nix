@@ -38,6 +38,20 @@
     enable = true;
     clock24 = true;
     mouse = true;
+    extraConfig = ''
+      set-option -ga terminal-overrides ",xterm-256color:RGB"
+    '';
+    plugins = with pkgs; [
+      tmuxPlugins.resurrect
+      {
+        plugin = tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '1' # minutes
+        '';
+      }
+
+    ];
   };
 
 }
