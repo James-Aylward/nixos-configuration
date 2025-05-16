@@ -15,6 +15,7 @@
     ../../home-modules/terminal.nix
     ../../home-modules/version-control.nix
     ../../home-modules/neovim/neovim.nix
+    ../../home-modules/idea.nix
     ../../home-modules/office.nix
     ../../home-modules/media.nix
     ../../home-modules/notifications.nix
