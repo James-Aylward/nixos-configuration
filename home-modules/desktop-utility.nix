@@ -15,6 +15,7 @@
     };
   };
 
+  services.blueman-applet.enable = true;
 
   services.nextcloud-client = {
     enable = true;

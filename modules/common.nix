@@ -9,6 +9,8 @@
 
   environment.systemPackages = with pkgs; [ xclip ];
 
+  services.blueman.enable = true;
+
   stylix.enable = true;
 
   stylix.base16Scheme =
