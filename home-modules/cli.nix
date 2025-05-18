@@ -9,11 +9,11 @@
     unzip
     usbutils
     nix-search-cli
-    btop
     tldr
     nixfmt-classic
   ];
 
+  programs.btop.enable = true;
   programs.lazygit.enable = true;
   home.shellAliases = { lg = "lazygit"; };
 
@@ -43,11 +43,15 @@
     mouse = true;
     extraConfig = ''
       set-option -ga terminal-overrides ",xterm-256color:RGB"
+      bind '"' split-window -v -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
     '';
-    plugins = with pkgs; [
-      tmuxPlugins.resurrect
+    plugins = with pkgs.tmuxPlugins; [
+      resurrect
+      sensible
+      tmux-fzf
       {
-        plugin = tmuxPlugins.continuum;
+        plugin = continuum;
         extraConfig = ''
           set -g @continuum-restore 'on'
           set -g @continuum-save-interval '1' # minutes
