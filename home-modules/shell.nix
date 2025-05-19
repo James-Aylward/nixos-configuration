@@ -23,9 +23,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    sessionVariables = {
-    	IGNOREEOF = 3;
-    };
+    sessionVariables = { IGNOREEOF = 3; };
 
     oh-my-zsh = {
       enable = true;

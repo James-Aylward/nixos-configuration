@@ -2,11 +2,8 @@
   services.picom = {
     enable = true;
     shadow = true;
-    shadowExclude = [
-    "class_g = 'dwm'"
-    "class_g = 'dmenu'"
-    "class_g = 'dwmsystray'"
-    ];
+    shadowExclude =
+      [ "class_g = 'dwm'" "class_g = 'dmenu'" "class_g = 'dwmsystray'" ];
     #activeOpacity = 1;
     #inactiveOpacity = 0.98;
     #opacityRules = [

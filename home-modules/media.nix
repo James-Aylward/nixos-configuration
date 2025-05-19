@@ -1,9 +1,7 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [ vlc darktable imagemagick qimgv yt-dlp ];
 
-  programs.mpv = {
-    enable = true;
-  };
+  programs.mpv = { enable = true; };
 
   programs.ncspot = {
     enable = true;

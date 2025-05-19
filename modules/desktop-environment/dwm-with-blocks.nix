@@ -18,9 +18,7 @@
       package = pkgs.dwm.overrideAttrs { src = ./dwm; };
     };
 
-    displayManager.lightdm = {
-        enable = true;
-    };
+    displayManager.lightdm = { enable = true; };
   };
 }
 

@@ -9,18 +9,19 @@
     vimAlias = true;
     vimdiffAlias = true;
 
-    extraLuaConfig = lib.fileContents ./options.lua + "\n" + lib.fileContents ./keybinds.lua;
+    extraLuaConfig = lib.fileContents ./options.lua + "\n"
+      + lib.fileContents ./keybinds.lua;
     plugins = with pkgs.vimPlugins; [
       # Utility
       {
         plugin = marks-nvim;
         type = "lua";
-	config = builtins.readFile ./marks-nvim.lua;
+        config = builtins.readFile ./marks-nvim.lua;
       }
       {
         plugin = telescope-nvim;
         type = "lua";
-	config = builtins.readFile ./telescope-nvim.lua;
+        config = builtins.readFile ./telescope-nvim.lua;
       }
       auto-pairs
 
@@ -28,7 +29,7 @@
       {
         plugin = knap;
         type = "lua";
-	config = builtins.readFile ./knap.lua;
+        config = builtins.readFile ./knap.lua;
       }
       luasnip
 
@@ -36,7 +37,7 @@
       {
         plugin = lualine-nvim;
         type = "lua";
-	config = builtins.readFile ./lualine-nvim.lua;
+        config = builtins.readFile ./lualine-nvim.lua;
       }
 
       # LSP
@@ -49,12 +50,12 @@
       {
         plugin = nvim-cmp;
         type = "lua";
-	config = builtins.readFile ./nvim-cmp.lua;
+        config = builtins.readFile ./nvim-cmp.lua;
       }
       {
         plugin = nvim-lspconfig;
         type = "lua";
-	config = builtins.readFile ./nvim-lspconfig.lua;
+        config = builtins.readFile ./nvim-lspconfig.lua;
       }
     ];
 
@@ -71,7 +72,6 @@
       ripgrep
       rubber
     ];
-
 
   };
 }

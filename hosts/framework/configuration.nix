@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../modules/desktop-environment/dwm-with-blocks.nix
     #../../modules/desktop-environment/cinnamon.nix
+    ../../modules/moss-mount.nix
     ../../modules/common.nix
     ../../modules/virtualisation.nix
     ../../modules/audio.nix
