@@ -16,6 +16,7 @@ in {
     hunspellDicts.en-au-large
   ];
 
-  # TODO colors
   programs.sioyek.enable = true;
+
+  programs.vesktop.enable = true;
 }
