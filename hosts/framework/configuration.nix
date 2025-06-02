@@ -22,8 +22,10 @@
     efiSysMountPoint = "/boot/efi";
   };
 
-  networking.hostName = "renix-server"; # Define your hostname.
+  networking.hostName = "framework"; # Define your hostname.
   services.openssh.enable = true;
+  services.geoclue2.enable = true;
+  services.localtimed.enable = true;
 
 
   services.xserver.dpi = 192;
@@ -39,7 +41,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  time.timeZone = "Australia/Brisbane";
+  #time.timeZone = "Australia/Brisbane";
   i18n.defaultLocale = "en_GB.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_AU.UTF-8";
