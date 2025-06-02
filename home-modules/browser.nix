@@ -15,7 +15,7 @@
       c.colors.webpage.preferred_color_scheme = "dark"
       c.content.autoplay = False
 
-      config.bind('Z', 'hint links spawn mpv --force-window=immediate {hint-url}')
+      config.bind('Z', 'hint links spawn -d mpv --force-window=immediate {hint-url}')
     '';
   };
 
