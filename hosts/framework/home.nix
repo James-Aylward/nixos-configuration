@@ -9,8 +9,7 @@
   imports = [
     ../../home-modules/cli.nix
     ../../home-modules/desktop-utility.nix
-
-    # office
+    ../../home-modules/redshift.nix
     ../../home-modules/shell.nix
     ../../home-modules/terminal.nix
     ../../home-modules/version-control.nix
@@ -19,6 +18,7 @@
     ../../home-modules/office.nix
     ../../home-modules/media.nix
     ../../home-modules/notifications.nix
+    ../../home-modules/mathematica.nix
     ../../home-modules/browser.nix
     ../../home-modules/picom.nix
   ];
