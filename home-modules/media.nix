@@ -3,6 +3,7 @@
 
   programs.mpv = { enable = true; };
 
+  programs.foliate.enable = true;
   programs.ncspot = {
     enable = true;
     settings = {
