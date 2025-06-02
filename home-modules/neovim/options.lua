@@ -38,6 +38,9 @@ vim.opt.foldlevelstart = 99
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
 
+-- Clipboard
+vim.o.clipboard = "unnamedplus"
+
 -- Autocommands
 -- Latex
 vim.api.nvim_create_autocmd( {"BufEnter", "BufWinEnter"}, {
