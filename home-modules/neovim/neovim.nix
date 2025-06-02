@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }: {
 
   home.sessionVariables.EDITOR = "nvim";
-  #home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./dotfiles;
 
   programs.neovim = {
     enable = true;
@@ -23,7 +22,6 @@
         type = "lua";
         config = builtins.readFile ./telescope-nvim.lua;
       }
-      auto-pairs
 
       # LaTeX
       {
