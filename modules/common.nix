@@ -15,7 +15,7 @@
 
   stylix.base16Scheme =
     "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-  stylix.image = ../images/nix.png;
+  stylix.image = ../images/flowers.png;
   stylix.targets.grub.useWallpaper = true;
   stylix.polarity = "dark";
 
