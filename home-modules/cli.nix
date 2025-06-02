@@ -11,14 +11,12 @@
     nix-search-cli
     tldr
     nixfmt-classic
+    moreutils # for tmux resurrect
   ];
 
   programs.btop.enable = true;
   programs.lazygit.enable = true;
   home.shellAliases = { lg = "lazygit"; };
-
-  # TODO remove
-  home.shellAliases = { m = "bear -- make"; };
 
   programs.zoxide = {
     enable = true;
@@ -47,15 +45,17 @@
       bind % split-window -h -c "#{pane_current_path}"
     '';
     plugins = with pkgs.tmuxPlugins; [
-      resurrect
       sensible
       tmux-fzf
+      resurrect
       {
         plugin = continuum;
         extraConfig = ''
           set -g @continuum-restore 'on'
           set -g @continuum-save-interval '1' # minutes
           set -g @resurrect-strategy-nvim 'session'
+          set -g @resurrect-processes 'ssh ghc ghci ghcid'
+          set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | sponge $target'
         '';
       }
 
