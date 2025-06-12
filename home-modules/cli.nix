@@ -7,9 +7,10 @@
     ncdu
     file
     unzip
+    pastel
     usbutils
     nix-search-cli
-    tldr
+    tlrc
     nixfmt-classic
     moreutils # for tmux resurrect
   ];

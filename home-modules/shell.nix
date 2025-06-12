@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
 
-  home.packages = with pkgs; [ nitch ];
+  home.packages = with pkgs; [ nitch cbonsai ];
 
   home.shell.enableZshIntegration = true;
 
@@ -38,6 +38,10 @@
     initContent = ''
       setopt ignore_eof
       nitch
+      export TMOUT=60
+      TRAPALRM() {
+          cbonsai -l -S -M 7 -L 50 
+      }
     '';
   };
 }
