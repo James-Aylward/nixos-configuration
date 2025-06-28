@@ -9,6 +9,7 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelParams = [ "usbcore.autosuspend=-1" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
