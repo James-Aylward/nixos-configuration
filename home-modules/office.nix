@@ -4,7 +4,7 @@ let
     inherit (pkgs.texlive)
       scheme-basic pgf ec gensymb cm-super environ txfonts parskip pgfplots
       etoolbox stackengine advdate titlesec pdfpages pdflscape float microtype
-      siunitx tcolorbox listings;
+      siunitx tcolorbox listings enumitem;
   });
 in {
   home.packages = with pkgs; [
