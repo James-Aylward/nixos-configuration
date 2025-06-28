@@ -27,6 +27,11 @@
   services.geoclue2.enable = true;
   services.localtimed.enable = true;
 
+  services.printing = {
+      enable = true;
+      drivers = with pkgs; [ canon-cups-ufr2 gutenprint ];
+  };
+
 
   services.xserver.dpi = 192;
   environment.variables = rec {
