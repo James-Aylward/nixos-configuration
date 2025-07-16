@@ -16,11 +16,6 @@
     nix-direnv.enable = true;
   };
 
-  programs.zellij = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
   programs.zsh = {
     enable = true;
 
