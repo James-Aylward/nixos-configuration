@@ -2,7 +2,7 @@
 let
   tex = (pkgs.texlive.combine {
     inherit (pkgs.texlive)
-      scheme-basic pgf ec gensymb cm-super environ txfonts parskip pgfplots
+      scheme-full pgf ec gensymb cm-super environ txfonts parskip pgfplots
       etoolbox stackengine advdate titlesec pdfpages pdflscape float microtype
       siunitx tcolorbox listings enumitem psnfss;
   });
