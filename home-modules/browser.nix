@@ -4,9 +4,7 @@
   programs.librewolf = {
     enable = true;
     profiles.jamesa = {
-      settings = {
-          "privacy.clearOnShutdown.cookies" = false;
-      };
+      settings = { "privacy.clearOnShutdown.cookies" = false; };
       search.engines = {
         home-manager = {
           name = "Homemanager Options";
