@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  home.packages = with pkgs; [ vlc darktable imagemagick qimgv yt-dlp ];
+  home.packages = with pkgs; [ vlc darktable imagemagick qimgv yt-dlp calibre ];
 
   programs.mpv = { enable = true; };
 
