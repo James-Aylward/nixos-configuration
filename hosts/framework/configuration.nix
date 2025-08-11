@@ -91,6 +91,9 @@
     powerOnBoot = true;
   };
 
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
   services.hardware.bolt.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
