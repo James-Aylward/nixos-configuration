@@ -9,7 +9,7 @@
     ../../modules/virtualisation.nix
     ../../modules/audio.nix
     ../../modules/wireguard.nix
-    ../../modules/steam.nix
+    #../../modules/steam.nix
     inputs.home-manager.nixosModules.default
   ];
 

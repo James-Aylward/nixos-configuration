@@ -3,8 +3,8 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    #../../modules/desktop-environment/dwm-with-blocks.nix
-    ../../modules/desktop-environment/cinnamon.nix
+    ../../modules/desktop-environment/dwm-with-blocks.nix
+    #../../modules/desktop-environment/cinnamon.nix
     ../../modules/common.nix
     ../../modules/audio.nix
     ../../modules/wireguard.nix
