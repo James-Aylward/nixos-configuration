@@ -4,8 +4,21 @@
   programs.librewolf = {
     enable = true;
     profiles.jamesa = {
-      settings = { "privacy.clearOnShutdown.cookies" = false; };
+      search.default = "ddg";
       search.engines = {
+        arch-wiki = {
+          name = "Arch Wiki";
+          urls = [{
+            template = "https://wiki.archlinux.org/index.php";
+            params = [
+              {
+                name = "search";
+                value = "{searchTerms}";
+              }
+            ];
+          }];
+          definedAliases = [ "@aw" ];
+        };
         home-manager = {
           name = "Homemanager Options";
           urls = [{

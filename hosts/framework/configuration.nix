@@ -6,6 +6,7 @@
     ../../modules/desktop-environment/dwm-with-blocks.nix
     #../../modules/desktop-environment/cinnamon.nix
     ../../modules/common.nix
+    ../../modules/browser.nix
     ../../modules/virtualisation.nix
     ../../modules/audio.nix
     ../../modules/wireguard.nix
