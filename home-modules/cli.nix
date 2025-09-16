@@ -4,6 +4,7 @@
     tree
     zip
     unzip
+    macchanger
     ncdu
     file
     unzip
