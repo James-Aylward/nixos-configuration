@@ -1,6 +1,5 @@
 { config, pkgs, ... }: {
 
-  # TODO colors
   nixpkgs.overlays = [ (import ../overlays.nix) ];
   services.flameshot = {
     enable = true;
@@ -14,6 +13,8 @@
   };
 
   services.blueman-applet.enable = true;
+
+  programs.obs-studio.enable = true;
 
   services.nextcloud-client = {
     enable = true;
