@@ -1,5 +1,9 @@
 { config, pkgs, ... }: {
 
+  home.packages = with pkgs; [
+    tor-browser
+  ];
+
   stylix.targets.librewolf.profileNames = [ "jamesa" ];
   programs.librewolf = {
     enable = true;
