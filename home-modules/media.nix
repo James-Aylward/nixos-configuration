@@ -7,6 +7,7 @@
     qimgv
     yt-dlp
     calibre
+    android-file-transfer
   ];
 
   programs.mpv = { enable = true; };
