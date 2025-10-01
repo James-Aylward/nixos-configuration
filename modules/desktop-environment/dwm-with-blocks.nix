@@ -2,12 +2,14 @@
   imports = [ ./xkb.nix ];
 
   environment.systemPackages = with pkgs; [
-    dmenu-rs
+    (pkgs.dmenu.override { patches = [./center.diff]; } )
     playerctl
     feh
     brightnessctl
     networkmanagerapplet
-    (import ./switch.nix { inherit pkgs; })
+    (import ./dwmscripts/dwmswitch.nix { inherit pkgs; })
+    (import ./dwmscripts/dwmtimer.nix { inherit pkgs; })
+    (import ./dwmscripts/dwmsys.nix { inherit pkgs; })
     (pkgs.dwmblocks.overrideAttrs { src = ./dwmblocks; })
   ];
 
