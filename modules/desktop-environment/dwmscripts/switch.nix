@@ -13,10 +13,11 @@ pkgs.writeShellScriptBin "switch" ''
                       $1 = ""; printf "%s\n", $0}')
 
 
-  target=$(echo "$windows" | dmenu --sb \#fc7e18 \
-                                   --nb \#282828 \
-                                   --nf \#bbbbbb \
-                                   --sf \#eeeeee \
+  target=$(echo "$windows" | dmenu -sb \#fc7e18 \
+                                   -nb \#282828 \
+                                   -nf \#bbbbbb \
+                                   -sf \#eeeeee \
+                                   -c \
                                    -l 10 -i -p switch: | tr -s '[:blank:]' | cut -d ' ' -f 2-)
 
   if [[ -n $target ]]; then
