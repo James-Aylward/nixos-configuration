@@ -4,6 +4,7 @@
     tree
     zip
     unzip
+    pwgen
     macchanger
     ncdu
     file
