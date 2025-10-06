@@ -1,9 +1,9 @@
-local lsp = require("lspconfig")
-lsp.clangd.setup{}
-lsp.lua_ls.setup{}
-lsp.rust_analyzer.setup{}
-lsp.texlab.setup{}
-lsp.hls.setup{}
-lsp.pyright.setup{}
-lsp.java_language_server.setup{}
-lsp.nixd.setup{}
+vim.lsp.enable('clangd')
+vim.lsp.enable('html')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('texlab')
+vim.lsp.enable('hls')
+vim.lsp.enable('pyright')
+vim.lsp.enable('java_language_server')
+vim.lsp.enable('nixd')
