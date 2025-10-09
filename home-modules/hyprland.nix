@@ -52,8 +52,10 @@
     enable = true;
     settings.mainBar = {
       height = 5;
-      margin = "10,10,0,10";
       modules-left = [ "hyprland/workspaces" ];
+      margin-left = 10;
+      margin-right = 10;
+      margin-top = 10;
       spacing = 10;
       modules-center = [ "hyprland/window" ];
       modules-right = [
@@ -148,7 +150,8 @@
 
       # Aesthetic
       general = {
-        "gaps_in" = 0;
+        "layout" = "master";
+        "gaps_in" = 10;
         "gaps_out" = 10;
         "resize_on_border" = true;
         "border_size" = 2;
@@ -193,13 +196,17 @@
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
 
-        "$mod SHIFT, S, exec, $screenshot-region"
-        "$mod CTRL_SHIFT, S, exec, $screenshot-window"
+        "$mod SHIFT, Return, layoutmsg, swapwithmaster"
+        "$mod SHIFT, Return, layoutmsg, focusmaster"
+        "$mod, F, fullscreen"
 
         # System
         "$mod SHIFT, L, exec, hyprlock"
         "$mod, Escape, exec, $power"
         "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+        "$mod SHIFT, S, exec, $screenshot-region"
+        "$mod CTRL_SHIFT, S, exec, $screenshot-window"
+
 
         # Change workspace
         "$mod, 1, workspace, 1"
