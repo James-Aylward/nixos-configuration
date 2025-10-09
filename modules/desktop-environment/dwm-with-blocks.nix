@@ -10,6 +10,7 @@
     (import ./dwmscripts/dwmswitch.nix { inherit pkgs; })
     (import ./dwmscripts/dwmtimer.nix { inherit pkgs; })
     (import ./dwmscripts/dwmsys.nix { inherit pkgs; })
+    (import ./dwmscripts/dwmvpn.nix { inherit pkgs; })
     (pkgs.dwmblocks.overrideAttrs { src = ./dwmblocks; })
   ];
 

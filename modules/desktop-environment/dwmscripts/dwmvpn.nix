@@ -13,10 +13,10 @@ actives=$(nmcli connection show --active)
     if [[ "$actives" == *"$selection"* ]]; then
 # Turn off
     nmcli connection down $selection
-    notify-send $selection "Connection deactivated"
+    ${pkgs.libnotify}/bin/notify-send $selection "Connection deactivated"
     else
 # Turn on
     nmcli connection up $selection
-    notify-send $selection "Connection activated"
+    ${pkgs.libnotify}/bin/notify-send $selection "Connection activated"
     fi
     ''
