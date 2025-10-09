@@ -20,7 +20,7 @@
   stylix.polarity = "dark";
 
   stylix.cursor = {
-    package = pkgs.rose-pine-cursor;
+    package = pkgs.rose-pine-hyprcursor;
     name = "BreezeX-RosePine-Linux";
     size = 32;
   };

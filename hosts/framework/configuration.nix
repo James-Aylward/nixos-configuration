@@ -64,7 +64,7 @@
   users.users.jamesa = {
     isNormalUser = true;
     description = "jamesa";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "input" "networkmanager" "wheel" ];
     packages = with pkgs; [ ];
   };
 

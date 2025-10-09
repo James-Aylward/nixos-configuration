@@ -9,7 +9,7 @@
   imports = [
     ../../home-modules/cli.nix
     ../../home-modules/desktop-utility.nix
-    ../../home-modules/redshift.nix
+    #../../home-modules/redshift.nix
     ../../home-modules/shell.nix
     ../../home-modules/terminal.nix
     ../../home-modules/version-control.nix
