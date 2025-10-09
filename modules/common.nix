@@ -26,7 +26,7 @@
   };
 
   stylix.fonts.sizes = {
-    terminal = 10;
+    terminal = 12.5;
   };
   stylix.fonts = {
     serif = {
