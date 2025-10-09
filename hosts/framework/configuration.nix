@@ -34,12 +34,12 @@
     drivers = with pkgs; [ canon-cups-ufr2 gutenprint ];
   };
 
-  services.xserver.dpi = 192;
-  environment.variables = rec {
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    QT_SCALE_FACTOR = "2";
-    _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
-  };
+  #services.xserver.dpi = 192;
+  #environment.variables = rec {
+  #  QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+  #  QT_SCALE_FACTOR = "2";
+  #  _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+  #};
 
   services.xserver.displayManager.importedVariables =
     [ "QT_AUTO_SCREEN_SCALE_FACTOR" "QT_SCALE_FACTOR" "_JAVA_OPTIONS" ];
