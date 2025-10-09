@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
 
   environment.systemPackages = with pkgs; [ remmina ];
 
@@ -17,5 +18,8 @@
       ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --dport 1637 -j RETURN || true
     '';
   };
-  networking.firewall.allowedTCPPorts = [ 9090 9091 ];
+  networking.firewall.allowedTCPPorts = [
+    9090
+    9091
+  ];
 }

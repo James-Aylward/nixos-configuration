@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
 
   home.packages = with pkgs; [
     tree
@@ -19,7 +20,9 @@
 
   programs.btop.enable = true;
   programs.lazygit.enable = true;
-  home.shellAliases = { lg = "lazygit"; };
+  home.shellAliases = {
+    lg = "lazygit";
+  };
 
   programs.zoxide = {
     enable = true;

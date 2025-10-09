@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   # rtkit is optional but recommended
   security.rtkit.enable = true;
   services.pipewire = {
@@ -10,7 +11,11 @@
     #jack.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [ pamixer playerctl pavucontrol ];
+  environment.systemPackages = with pkgs; [
+    pamixer
+    playerctl
+    pavucontrol
+  ];
 
   services.playerctld.enable = true;
 }

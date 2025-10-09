@@ -1,6 +1,11 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   programs.alacritty = {
     enable = true;
-    settings = { env = { TERM = "xterm-256color"; }; };
+    settings = {
+      env = {
+        TERM = "xterm-256color";
+      };
+    };
   };
 }

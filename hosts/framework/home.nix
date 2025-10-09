@@ -10,7 +10,6 @@
     ../../home-modules/cli.nix
     ../../home-modules/desktop-utility.nix
     ../../home-modules/redshift.nix
-    ../../home-modules/games.nix
     ../../home-modules/shell.nix
     ../../home-modules/terminal.nix
     ../../home-modules/version-control.nix
@@ -18,10 +17,11 @@
     ../../home-modules/idea.nix
     ../../home-modules/office.nix
     ../../home-modules/media.nix
-    ../../home-modules/notifications.nix
+    #../../home-modules/notifications.nix
     ../../home-modules/mathematica.nix
     ../../home-modules/browser.nix
-    ../../home-modules/picom.nix
+    #../../home-modules/picom.nix
+    ../../home-modules/hyprland.nix
   ];
 
   # Let home manager install and manage itself

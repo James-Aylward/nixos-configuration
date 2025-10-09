@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   home.packages = with pkgs; [
     vlc
     darktable
@@ -10,7 +11,9 @@
     android-file-transfer
   ];
 
-  programs.mpv = { enable = true; };
+  programs.mpv = {
+    enable = true;
+  };
 
   programs.foliate.enable = true;
   programs.ncspot = {

@@ -1,1 +1,4 @@
-{ config, pkgs, ... }: { services.dunst.enable = true; }
+{ config, pkgs, ... }:
+{
+  services.dunst.enable = true;
+}

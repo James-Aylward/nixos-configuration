@@ -1,12 +1,35 @@
 { config, pkgs, ... }:
 let
-  tex = (pkgs.texlive.combine {
-    inherit (pkgs.texlive)
-      scheme-full pgf ec gensymb cm-super environ txfonts parskip pgfplots
-      etoolbox stackengine advdate titlesec pdfpages pdflscape float microtype
-      siunitx tcolorbox listings enumitem psnfss;
-  });
-in {
+  tex = (
+    pkgs.texlive.combine {
+      inherit (pkgs.texlive)
+        scheme-full
+        pgf
+        ec
+        gensymb
+        cm-super
+        environ
+        txfonts
+        parskip
+        pgfplots
+        etoolbox
+        stackengine
+        advdate
+        titlesec
+        pdfpages
+        pdflscape
+        float
+        microtype
+        siunitx
+        tcolorbox
+        listings
+        enumitem
+        psnfss
+        ;
+    }
+  );
+in
+{
   home.packages = with pkgs; [
     tex
     libreoffice-fresh

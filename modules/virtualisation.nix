@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   virtualisation.virtualbox.host.enable = true;
   #users.extraGroups.vboxusers.members = [ "jamesa" ];
   virtualisation.libvirtd.enable = true;

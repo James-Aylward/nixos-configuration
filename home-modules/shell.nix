@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
 
   home.packages = with pkgs; [ nitch ];
 
@@ -23,11 +24,17 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    sessionVariables = { IGNOREEOF = 3; };
+    sessionVariables = {
+      IGNOREEOF = 3;
+    };
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "sudo" "copyfile" "vi-mode" ];
+      plugins = [
+        "sudo"
+        "copyfile"
+        "vi-mode"
+      ];
     };
 
     initContent = ''

@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
 
   nixpkgs.overlays = [ (import ../overlays.nix) ];
   services.flameshot = {
