@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
 
   home.packages = with pkgs; [
@@ -151,6 +151,7 @@
       # Aesthetic
       general = {
         "layout" = "master";
+        "col.active_border" = lib.mkForce "rgb(${config.lib.stylix.colors.base0E})";
         "gaps_in" = 10;
         "gaps_out" = 10;
         "resize_on_border" = true;
