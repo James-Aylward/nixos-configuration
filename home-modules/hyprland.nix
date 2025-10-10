@@ -7,6 +7,8 @@
     cliphist
     wl-clipboard
     networkmanagerapplet
+    libnotify
+    jq
   ];
 
   home.pointerCursor.hyprcursor.enable = true;
@@ -16,7 +18,13 @@
   programs.hyprlock.enable = true;
   programs.hyprshot.enable = true;
 
-  services.mako.enable = true;
+  services.mako = {
+      enable = true;
+      settings = {
+        border-radius = 5;
+        default-timeout = 10000;
+      };
+  };
   services.hyprpolkitagent.enable = true;
   services.hyprsunset.enable = true;
 
@@ -152,21 +160,33 @@
       general = {
         "layout" = "master";
         "col.active_border" = lib.mkForce "rgb(${config.lib.stylix.colors.base0E})";
-        "gaps_in" = 10;
+        "gaps_in" = 5;
         "gaps_out" = 10;
         "resize_on_border" = true;
         "border_size" = 2;
       };
+
+      master = {
+        "special_scale_factor" = 0.8;
+      };
+
       decoration = {
         "rounding" = 5;
       };
 
+      animation = [
+        "specialWorkspace, 1, 5, default, slidevert"
+      ];
+
       # Programs
       "$terminal" = "alacritty";
       "$browser" = "librewolf";
-      "$notes" = "obsidian";
+      "$notes" = "OBSIDIAN_USE_WAYLAND=1 obsidian -enable-features=UseOzonePlatform -ozone-platform=wayland";
       "$menu" = "wofi --show drun";
+      "$pdf" = "sioyek --new-window";
+      "$photos" = "GDK_BACKEND=wayland darktable";
       "$power" = "nwg-bar";
+      "$messages" = "signal-desktop";
       "$screenshot-region" = "hyprshot -m region";
       "$screenshot-window" = "hyprshot -m window";
 
@@ -176,7 +196,6 @@
         "waybar"
         "nm-applet"
         "wl-paste --type text --watch cliphist store"
-
         "wl-paste --type image --watch cliphist store"
         "blueman-applet"
         "signal-desktop --start-in-tray"
@@ -184,12 +203,18 @@
       ];
 
       bind = [
-        "$mod, Return, exec, $terminal"
         "$mod SHIFT, Q, killactive,"
-        "$mod, R, exec, $menu"
+
+        "$mod, Return, exec, $terminal"
+        "$mod, Space, exec, $menu"
+
         "$mod, B, exec, $browser"
-        "$mod, P, pseudo, # dwindle"
-        "$mod, J, togglesplit, # dwindle"
+        "$mod, W, exec, $notes"
+        "$mod, Q, exec, $photos"
+        "$mod, S, exec, $messages"
+        "$mod, T, exec, $pdf"
+        "$mod, G, exec, ~/projects/hyprscripts/lglaunch.sh && hyprctl dispatch togglespecialworkspace lg"
+        "$mod, P, exec, ~/projects/hyprscripts/ncspotlaunch.sh && hyprctl dispatch togglespecialworkspace ncspot"
 
         # Change focus
         "$mod, left, movefocus, l"
@@ -199,11 +224,33 @@
 
         "$mod SHIFT, Return, layoutmsg, swapwithmaster"
         "$mod SHIFT, Return, layoutmsg, focusmaster"
+
+        # Change focus
+        "$mod, J, layoutmsg, cyclenext"
+        "$mod, K, layoutmsg, cycleprev"
+
+        # Change master size
+        "$mod, L, layoutmsg, mfact +0.05"
+        "$mod, H, layoutmsg, mfact -0.05"
+
+        "$mod SHIFT, H, resizeactive, 0 -15"
+        "$mod SHIFT, J, layoutmsg, swapnext"
+        "$mod SHIFT, K, layoutmsg, swapprev"
+        "$mod SHIFT, L, resizeactive, 0 15"
+
+        "$mod, E, layoutmsg, rollprev"
+        "$mod, I, layoutmsg, rollnext"
+
         "$mod, F, fullscreen"
+        
+        "$mod, O, layoutmsg, orientationnext"
+        "$mod, M, layoutmsg, addmaster"
+        "$mod, N, layoutmsg, removemaster"
+        
 
         # System
-        "$mod SHIFT, L, exec, hyprlock"
-        "$mod, Escape, exec, $power"
+        "$mod, Escape, exec, hyprlock"
+        "$mod SHIFT, Escape, exec, $power"
         "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mod SHIFT, S, exec, $screenshot-region"
         "$mod CTRL_SHIFT, S, exec, $screenshot-window"
@@ -232,6 +279,9 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
+
+        "$mod SHIFT, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')"
+        "$mod SHIFT, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float * 0.9) | if . < 1 then 1 else . end')"
       ];
 
       bindl = [
