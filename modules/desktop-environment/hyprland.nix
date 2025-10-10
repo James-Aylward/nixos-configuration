@@ -10,6 +10,5 @@
   '';
 
   environment.systemPackages = with pkgs; [ cliphist ];
-
   programs.hyprland.enable = true;
 }
