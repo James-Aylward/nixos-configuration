@@ -210,6 +210,7 @@
         "special:ncspot, on-created-empty:alacritty -e ncspot"
         "special:btop, on-created-empty:alacritty -e btop"
         "special:signal, on-created-empty:signal-desktop"
+        "special:nixbuilder, on-created-empty:~/projects/hyprscripts/nixbuilder"
       ];
 
       bind = [
@@ -228,6 +229,7 @@
         "$mod, S, togglespecialworkspace, signal"
         "$mod, P, togglespecialworkspace, ncspot"
         "$mod, R, togglespecialworkspace, btop"
+        "$mod SHIFT, B, togglespecialworkspace, nixbuilder"
 
         # Change focus
         "$mod, left, movefocus, l"
