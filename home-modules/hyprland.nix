@@ -3,7 +3,6 @@
 
   home.packages = with pkgs; [
     brightnessctl
-    nwg-bar
     cliphist
     wl-clipboard
     networkmanagerapplet
@@ -14,7 +13,7 @@
   home.pointerCursor.hyprcursor.enable = true;
   home.pointerCursor.hyprcursor.size = 32;
 
-  programs.wofi.enable = true;
+  programs.rofi.enable = true;
   programs.hyprlock.enable = true;
   programs.hyprshot.enable = true;
 
@@ -179,27 +178,38 @@
       ];
 
       # Programs
+      "$git" = "alacritty -e lazygit";
+      "$music" = "alacritty -e ncspot";
       "$terminal" = "alacritty";
       "$browser" = "librewolf";
       "$notes" = "OBSIDIAN_USE_WAYLAND=1 obsidian -enable-features=UseOzonePlatform -ozone-platform=wayland";
-      "$menu" = "wofi --show drun";
+      "$menu" = "rofi -show drun";
       "$pdf" = "sioyek --new-window";
       "$photos" = "GDK_BACKEND=wayland darktable";
-      "$power" = "nwg-bar";
+      "$power" = "~/projects/hyprscripts/power";
       "$messages" = "signal-desktop";
       "$screenshot-region" = "hyprshot -m region";
       "$screenshot-window" = "hyprshot -m window";
+      "$togglewaybar" = "pkill -USR1 waybar";
 
       "$mod" = "SUPER";
 
       exec-once = [
         "waybar"
         "nm-applet"
+        "rm '$HOME/.cache/cliphist/db'"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "blueman-applet"
         "signal-desktop --start-in-tray"
         "pamixer --set-volume 0"
+      ];
+
+      workspace = [
+        "special:lazygit, on-created-empty:alacritty -e lazygit"
+        "special:ncspot, on-created-empty:alacritty -e ncspot"
+        "special:btop, on-created-empty:alacritty -e btop"
+        "special:signal, on-created-empty:signal-desktop"
       ];
 
       bind = [
@@ -211,10 +221,13 @@
         "$mod, B, exec, $browser"
         "$mod, W, exec, $notes"
         "$mod, Q, exec, $photos"
-        "$mod, S, exec, $messages"
+        #"$mod, S, exec, $messages"
         "$mod, T, exec, $pdf"
-        "$mod, G, exec, ~/projects/hyprscripts/lglaunch.sh && hyprctl dispatch togglespecialworkspace lg"
-        "$mod, P, exec, ~/projects/hyprscripts/ncspotlaunch.sh && hyprctl dispatch togglespecialworkspace ncspot"
+
+        "$mod, G, togglespecialworkspace, lazygit"
+        "$mod, S, togglespecialworkspace, signal"
+        "$mod, P, togglespecialworkspace, ncspot"
+        "$mod, R, togglespecialworkspace, btop"
 
         # Change focus
         "$mod, left, movefocus, l"
@@ -246,15 +259,14 @@
         "$mod, O, layoutmsg, orientationnext"
         "$mod, M, layoutmsg, addmaster"
         "$mod, N, layoutmsg, removemaster"
+        "$mod, apostrophe, exec, $togglewaybar"
         
-
         # System
         "$mod, Escape, exec, hyprlock"
-        "$mod SHIFT, Escape, exec, $power"
-        "$mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+        "$mod, grave, exec, $power"
+        "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         "$mod SHIFT, S, exec, $screenshot-region"
         "$mod CTRL_SHIFT, S, exec, $screenshot-window"
-
 
         # Change workspace
         "$mod, 1, workspace, 1"
