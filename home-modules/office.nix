@@ -39,6 +39,7 @@ in
     protonmail-desktop
     hunspell
     hunspellDicts.en-au-large
+    bagels
   ];
 
   programs.sioyek.enable = true;
