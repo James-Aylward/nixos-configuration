@@ -7,8 +7,8 @@
         TERM = "xterm-256color";
       };
       window.padding = {
-        x=5;
-        y=5;
+        x = 5;
+        y = 5;
       };
     };
   };
