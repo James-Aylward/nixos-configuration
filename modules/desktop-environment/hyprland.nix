@@ -6,7 +6,7 @@
   };
 
   services.xserver.displayManager.setupCommands = ''
-  localectl --no-convert set-x11-keymap us,us colemak_dh, grp:alt_space_toggle
+    localectl --no-convert set-x11-keymap us,us colemak_dh, grp:alt_space_toggle
   '';
 
   environment.systemPackages = with pkgs; [ cliphist ];
