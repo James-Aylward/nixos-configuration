@@ -2,16 +2,16 @@
 {
 
   nixpkgs.overlays = [ (import ../overlays.nix) ];
-  services.flameshot = {
-    enable = true;
-    settings = {
-      General = {
-        showStartupLaunchMessage = false;
-        #  uiColor = "#d79921";
-        #  contrastUiColor = "#282828";
-      };
-    };
-  };
+  #services.flameshot = {
+  #  enable = true;
+  #  settings = {
+  #    General = {
+  #      showStartupLaunchMessage = false;
+  #      #  uiColor = "#d79921";
+  #      #  contrastUiColor = "#282828";
+  #    };
+  #  };
+  #};
 
   services.blueman-applet.enable = true;
 
