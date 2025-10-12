@@ -2,7 +2,7 @@
   imports = [ ./xkb.nix ];
 
   environment.systemPackages = with pkgs; [
-    (pkgs.dmenu.override { patches = [./center.diff]; } )
+    (pkgs.dmenu.override { patches = [ ./center.diff ]; })
     playerctl
     feh
     brightnessctl
