@@ -5,6 +5,7 @@
     tree
     zip
     unzip
+    lazyssh
     pwgen
     macchanger
     ncdu
