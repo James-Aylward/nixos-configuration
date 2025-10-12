@@ -18,7 +18,11 @@
   home.pointerCursor.hyprcursor.enable = true;
   home.pointerCursor.hyprcursor.size = 32;
 
-  programs.rofi.enable = true;
+  programs.rofi = {
+    enable = true;
+    plugins = [ pkgs.rofi-calc ];
+    theme = lib.mkForce ./rofi/theme.rasi;
+  };
   programs.hyprlock.enable = true;
   programs.hyprshot.enable = true;
 
@@ -231,6 +235,7 @@
         "$mod, T, exec, $pdf"
         "$mod, C, exec, $windowswitch"
         "$mod, Z, exec, alacritty -e bagels --at ~/Documents/bagels"
+        "$mod, slash, exec, ~/projects/hyprscripts/nodist"
         "$mod, A, exec, $vpn"
 
         "$mod, G, togglespecialworkspace, lazygit"
