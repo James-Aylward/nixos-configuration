@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 {
 
-  home.packages = with pkgs; [
-    tor-browser
-  ];
+  home.packages = with pkgs; [ tor-browser ];
 
   stylix.targets.librewolf.profileNames = [ "jamesa" ];
   programs.librewolf = {
@@ -26,6 +24,21 @@
     };
     profiles.jamesa = {
       search.engines = {
+        jdk = {
+          name = "JDK 21";
+          urls = [
+            {
+              template = "https://docs.oracle.com/en/java/javase/21/docs/api/search.html";
+              params = [
+                {
+                  name = "q";
+                  value = "{searchTerms}";
+                }
+              ];
+            }
+          ];
+          definedAliases = [ "@jdk" ];
+        };
         arch-wiki = {
           name = "Arch Wiki";
           urls = [
