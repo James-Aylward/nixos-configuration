@@ -7,6 +7,7 @@
     unzip
     lazyssh
     pwgen
+    nixfmt
     macchanger
     ncdu
     file
@@ -15,7 +16,6 @@
     usbutils
     nix-search-cli
     tlrc
-    nixfmt-classic
     moreutils # for tmux resurrect
   ];
 
