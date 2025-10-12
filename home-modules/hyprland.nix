@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
 
   home.packages = with pkgs; [
@@ -18,11 +23,11 @@
   programs.hyprshot.enable = true;
 
   services.mako = {
-      enable = true;
-      settings = {
-        border-radius = 5;
-        default-timeout = 10000;
-      };
+    enable = true;
+    settings = {
+      border-radius = 5;
+      default-timeout = 10000;
+    };
   };
   services.hyprpolkitagent.enable = true;
   services.hyprsunset.enable = true;
@@ -51,10 +56,10 @@
 
   programs.waybar = {
     style = ''
-        window#waybar {
-            border-radius: 5px;
-            border: 2px solid @base03;
-        }
+      window#waybar {
+          border-radius: 5px;
+          border: 2px solid @base03;
+      }
     '';
     enable = true;
     settings.mainBar = {
@@ -173,16 +178,15 @@
         "rounding" = 5;
       };
 
-      animation = [
-        "specialWorkspace, 1, 5, default, slidevert"
-      ];
+      animation = [ "specialWorkspace, 1, 5, default, slidevert" ];
 
       # Programs
       "$git" = "alacritty -e lazygit";
       "$music" = "alacritty -e ncspot";
       "$terminal" = "alacritty";
       "$browser" = "librewolf";
-      "$notes" = "OBSIDIAN_USE_WAYLAND=1 obsidian -enable-features=UseOzonePlatform -ozone-platform=wayland";
+      "$notes" =
+        "OBSIDIAN_USE_WAYLAND=1 obsidian -enable-features=UseOzonePlatform -ozone-platform=wayland";
       "$menu" = "rofi -show drun";
       "$pdf" = "sioyek --new-window";
       "$photos" = "GDK_BACKEND=wayland darktable";
@@ -217,7 +221,8 @@
       bind = [
         "$mod SHIFT, Q, killactive,"
 
-        "$mod, Return, exec, $terminal"
+        #"$mod, Return, exec, $terminal"
+        "$mod, Return, exec, ~/projects/hyprscripts/pwdlaunch"
         "$mod, Space, exec, $menu"
 
         "$mod, B, exec, $browser"
@@ -260,12 +265,12 @@
         "$mod, I, layoutmsg, rollnext"
 
         "$mod, F, fullscreen"
-        
+
         "$mod, O, layoutmsg, orientationnext"
         "$mod, M, layoutmsg, addmaster"
         "$mod, N, layoutmsg, removemaster"
         "$mod, apostrophe, exec, $togglewaybar"
-        
+
         # System
         "$mod, Escape, exec, hyprlock"
         "$mod, grave, exec, $power"
