@@ -166,7 +166,7 @@
       };
 
       master = {
-        "special_scale_factor" = 0.8;
+        "special_scale_factor" = 0.85;
       };
 
       decoration = {
@@ -187,13 +187,14 @@
       "$pdf" = "sioyek --new-window";
       "$photos" = "GDK_BACKEND=wayland darktable";
       "$power" = "~/projects/hyprscripts/power";
+      "$vpn" = "~/projects/hyprscripts/vpn";
       "$messages" = "signal-desktop";
       "$screenshot-region" = "hyprshot -m region";
       "$screenshot-window" = "hyprshot -m window";
       "$togglewaybar" = "pkill -USR1 waybar";
+      "$windowswitch" = "rofi -show window";
 
       "$mod" = "SUPER";
-
       exec-once = [
         "waybar"
         "nm-applet"
@@ -222,8 +223,10 @@
         "$mod, B, exec, $browser"
         "$mod, W, exec, $notes"
         "$mod, Q, exec, $photos"
-        #"$mod, S, exec, $messages"
         "$mod, T, exec, $pdf"
+        "$mod, C, exec, $windowswitch"
+        "$mod, Z, exec, alacritty -e bagels --at ~/Documents/bagels"
+        "$mod, A, exec, $vpn"
 
         "$mod, G, togglespecialworkspace, lazygit"
         "$mod, S, togglespecialworkspace, signal"
@@ -294,8 +297,8 @@
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
 
-        "$mod SHIFT, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')"
-        "$mod SHIFT, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float * 0.9) | if . < 1 then 1 else . end')"
+        #"$mod SHIFT, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')"
+        #"$mod SHIFT, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float * 0.9) | if . < 1 then 1 else . end')"
       ];
 
       bindl = [
@@ -316,6 +319,8 @@
 
       gesture = [
         "3, horizontal, workspace"
+        "3, up, dispatcher, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.1')"
+        "3, down, dispatcher, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float * 0.9) | if . < 1 then 1 else . end')"
       ];
 
       input = {
