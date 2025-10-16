@@ -34,7 +34,21 @@
     };
   };
   services.hyprpolkitagent.enable = true;
-  services.hyprsunset.enable = true;
+  services.hyprsunset = {
+    enable = true;
+    settings = {
+      profile = [
+        {
+          time = "7:30";
+          identity = true;
+        }
+        {
+          time = "21:00";
+          temperature = 3000;
+        }
+      ];
+    };
+  };
 
   services.hypridle = {
     enable = true;
@@ -61,32 +75,32 @@
   stylix.targets.waybar.addCss = false;
   programs.waybar = {
     style = ''
-      * {
-        border-radius: 0px;
-        font-size: 12px;
-        min-height: 0;
-        color: @base05;
-      }
+                  * {
+                      border-radius: 0px;
+                      font-size: 12px;
+                      min-height: 0;
+      color: @base05;
+                  }
 
-      window#waybar {
-          background: @base00;
-          border: 2px solid @base03;
-      }
+              window#waybar {
+      background: @base00;
+      border: 2px solid @base03;
+              }
 
       #workspaces {
-        padding: 2px;
+      padding: 2px;
       }
 
       #workspaces button.focused, #workspaces button.active {
-          background: @base0E;
+      background: @base0E;
       }
 
       #workspaces button.active label {
-          color: @base01;
+      color: @base01;
       }
 
       label.module {
-        padding: 2px;
+      padding: 2px;
       }
     '';
     enable = true;
