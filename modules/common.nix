@@ -25,6 +25,8 @@
     size = 32;
   };
 
+  stylix.opacity.terminal = 0.85;
+
   stylix.fonts.sizes = {
     terminal = 12.5;
   };
