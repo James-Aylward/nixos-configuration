@@ -24,6 +24,7 @@
   programs.lazygit.enable = true;
   home.shellAliases = {
     lg = "lazygit";
+    sex = "sudo chmod +x";
   };
 
   programs.zoxide = {
