@@ -58,11 +58,30 @@
     };
   };
 
+  stylix.targets.waybar.addCss = false;
   programs.waybar = {
     style = ''
+      * {
+        border-radius: 0px;
+        font-size: 12px;
+        min-height: 0;
+      }
+
       window#waybar {
-          border-radius: 5px;
+          background: @base00;
           border: 2px solid @base03;
+      }
+
+      #workspaces {
+        padding: 2px;
+      }
+
+      #workspaces button.focused, #workspaces button.active {
+          background: @base0E;
+      }
+
+      label.module {
+        padding: 2px;
       }
     '';
     enable = true;
@@ -79,6 +98,7 @@
         "clock"
         "battery"
         "temperature"
+        "custom/tailscale"
         "tray"
         "hyprland/language"
         "idle_inhibitor"
@@ -89,6 +109,18 @@
         format-icons = {
           activated = "  ";
           deactivated = "  ";
+        };
+      };
+
+      "custom/tailscale" = {
+        exec = "/home/jamesa/projects/hyprscripts/tailscalestatus";
+        format = "{icon}";
+        return-type = "json";
+        interval = 1000;
+        signal = 1;
+        format-icons = {
+          down = "󰪎 ";
+          up = "󰞉 ";
         };
       };
 
@@ -149,11 +181,11 @@
         };
         format = "{capacity}% {icon}";
         format-icons = [
-          ""
-          ""
-          ""
-          ""
-          ""
+          " "
+          " "
+          " "
+          " "
+          " "
         ];
       };
     };
@@ -179,10 +211,13 @@
       };
 
       decoration = {
-        "rounding" = 5;
+        #"rounding" = 5;
+        blur.enabled = false;
+        shadow.enabled = false;
       };
 
-      animation = [ "specialWorkspace, 1, 5, default, slidevert" ];
+      #animation = [ "specialWorkspace, 1, 5, default, slidevert" ];
+      animation = [ "global, 0" ];
 
       # Programs
       "$git" = "alacritty -e lazygit";
@@ -201,6 +236,8 @@
       "$screenshot-window" = "hyprshot -m window";
       "$togglewaybar" = "pkill -USR1 waybar";
       "$windowswitch" = "rofi -show window";
+
+      "misc:vfr" = true;
 
       "$mod" = "SUPER";
       exec-once = [
@@ -236,6 +273,9 @@
         "$mod, C, exec, $windowswitch"
         "$mod, Z, exec, alacritty -e bagels --at ~/Documents/bagels"
         "$mod, slash, exec, ~/projects/hyprscripts/nodist"
+        "$mod, X, exec, ~/projects/hyprscripts/audio"
+        "$mod, D, exec, ~/projects/hyprscripts/tailscaletoggle"
+        "$mod SHIFT, A, exec, ~/projects/hyprscripts/nixshell"
         "$mod, A, exec, $vpn"
 
         "$mod, G, togglespecialworkspace, lazygit"
