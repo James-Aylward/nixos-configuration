@@ -65,6 +65,7 @@
         border-radius: 0px;
         font-size: 12px;
         min-height: 0;
+        color: @base05;
       }
 
       window#waybar {
@@ -78,6 +79,10 @@
 
       #workspaces button.focused, #workspaces button.active {
           background: @base0E;
+      }
+
+      #workspaces button.active label {
+          color: @base01;
       }
 
       label.module {
@@ -138,11 +143,11 @@
       "pulseaudio" = {
         "format" = "{volume}% {icon}";
         "format-bluetooth" = "{volume}% {icon}";
-        "format-muted" = "-% ";
+        "format-muted" = "mut  ";
         "format-icons" = {
           "alsa_output.pci-0000_00_1f.3.analog-stereo" = "";
           "alsa_output.pci-0000_00_1f.3.analog-stereo-muted" = "";
-          "headphone" = "";
+          "headphone" = " ";
           "hands-free" = "";
           "headset" = "";
           "phone" = "";
@@ -324,6 +329,7 @@
         "$mod CTRL_SHIFT, S, exec, $screenshot-window"
 
         # Change workspace
+        "$mod, TAB, workspace, previous"
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
