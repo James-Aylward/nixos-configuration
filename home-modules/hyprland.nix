@@ -164,13 +164,13 @@
           "headphone" = " ";
           "hands-free" = "";
           "headset" = "";
-          "phone" = "";
-          "phone-muted" = "";
-          "portable" = "";
-          "car" = "";
+          "phone" = " ";
+          "phone-muted" = " ";
+          "portable" = " ";
+          "car" = " ";
           "default" = [
-            ""
-            ""
+            " "
+            " "
           ];
         };
         "scroll-step" = 1;
@@ -268,6 +268,12 @@
         "blueman-applet"
         "signal-desktop --start-in-tray"
         "pamixer --set-volume 0"
+      ];
+
+      monitor = [
+        "eDP-1, 2880x1920@120, 0x0, 2"
+        "DP-9, 2560x1440@143.91, 2560x0, 1"
+        "DP-10, 2560x1440@143.91, 2560x0, 1"
       ];
 
       workspace = [
