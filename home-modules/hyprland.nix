@@ -274,6 +274,7 @@
         "eDP-1, 2880x1920@120, 0x0, 2"
         "DP-9, 2560x1440@143.91, auto-center-right, 1"
         "DP-10, 2560x1440@143.91, auto-center-right, 1"
+        "DP-11, 2560x1440@143.91, auto-center-right, 1"
         ", preferred, auto-center-right, 1"
       ];
 
